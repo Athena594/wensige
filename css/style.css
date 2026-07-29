@@ -1,0 +1,354 @@
+/* ===== 文思阁 全局样式 ===== */
+/* 配色铁律：米白底 #F8F5F0 / 正文 #222222 / 暗红 #9E2B25 / 浅灰 #EAE5DC */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F8F5F0;
+    color: #222222;
+    font-family: "Songti SC", "SimSun", "STSong", serif;
+    line-height: 1.8;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+/* 头部：Logo + 站名 + 标语 */
+header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #9E2B25;
+}
+.logo img {
+    height: 64px;
+}
+.site-title h1 {
+    font-size: 32px;
+    color: #222222;
+    letter-spacing: 4px;
+}
+.site-title p {
+    color: #9E2B25;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+/* 固定置顶导航 */
+nav {
+    position: sticky;
+    top: 0;
+    background-color: #F8F5F0;
+    z-index: 10;
+    border-bottom: 1px solid #EAE5DC;
+    margin-bottom: 30px;
+}
+nav ul {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+    padding: 14px 0;
+    flex-wrap: wrap;
+}
+nav a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #222222;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+}
+nav a:hover,
+nav a.active {
+    background-color: #9E2B25;
+    color: #F8F5F0;
+}
+
+/* 专题轮播（手动切换，无自动播放） */
+.slider-box {
+    margin: 40px 0;
+    text-align: center;
+}
+.slide {
+    display: none;
+    padding: 20px;
+}
+.slide.active {
+    display: block;
+}
+.slide img {
+    max-width: 700px;
+    width: 100%;
+    border: 1px solid #EAE5DC;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+.slide h3 {
+    font-size: 24px;
+    color: #9E2B25;
+    margin-bottom: 10px;
+}
+.slide p {
+    font-size: 16px;
+    color: #444;
+    max-width: 600px;
+    margin: 0 auto 14px;
+}
+.slide-link {
+    display: inline-block;
+    color: #9E2B25;
+    text-decoration: none;
+    font-size: 16px;
+    border-bottom: 1px solid #9E2B25;
+    padding-bottom: 2px;
+}
+.slider-btn {
+    margin-top: 16px;
+}
+.slider-btn button {
+    background: #9E2B25;
+    color: #F8F5F0;
+    border: none;
+    padding: 8px 18px;
+    margin: 0 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: opacity 0.2s;
+}
+.slider-btn button:hover {
+    opacity: 0.85;
+}
+
+/* 四大分区卡片（响应式网格） */
+.card-wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin: 60px 0;
+}
+.card {
+    border: 1px solid #9E2B25;
+    border-radius: 8px;
+    padding: 28px 20px;
+    text-align: center;
+    background-color: #FFFFFF;
+    transition: background-color 0.2s;
+}
+.card:hover {
+    background-color: #EAE5DC;
+}
+.card h4 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #9E2B25;
+}
+.card p {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 14px;
+}
+.card a {
+    display: inline-block;
+    color: #222222;
+    text-decoration: none;
+    border-bottom: 1px solid #9E2B25;
+    padding-bottom: 2px;
+}
+
+/* 每日名句 */
+.sentence-box {
+    border: 1px solid #9E2B25;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    margin: 50px 0;
+    background-color: #FFFFFF;
+}
+.sentence-box h3 {
+    color: #9E2B25;
+    margin-bottom: 18px;
+    letter-spacing: 2px;
+}
+#dailySentence {
+    font-size: 24px;
+    color: #222222;
+    line-height: 1.6;
+}
+#sentenceSource {
+    margin-top: 12px;
+    font-size: 15px;
+    color: #9E2B25;
+}
+.sentence-btn {
+    margin-top: 20px;
+    background: #9E2B25;
+    color: #F8F5F0;
+    border: none;
+    padding: 8px 22px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: opacity 0.2s;
+}
+.sentence-btn:hover {
+    opacity: 0.85;
+}
+
+/* 页脚 */
+footer {
+    margin-top: 80px;
+    text-align: center;
+    color: #666;
+    padding-top: 20px;
+    border-top: 1px solid #EAE5DC;
+    font-size: 14px;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* 响应式：平板 */
+@media (max-width: 1024px) {
+    .card-wrap {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* 响应式：手机 */
+@media (max-width: 768px) {
+    body {
+        padding: 16px;
+    }
+    .site-title h1 {
+        font-size: 26px;
+    }
+    nav ul {
+        gap: 16px;
+    }
+    nav a {
+        font-size: 16px;
+        padding: 6px 8px;
+    }
+    .card-wrap {
+        grid-template-columns: 1fr;
+    }
+    .sentence-box {
+        padding: 28px 16px;
+    }
+    #dailySentence {
+        font-size: 20px;
+    }
+}
+
+/* ===== 可点击展开条目（表面文字框 → 点击弹出长文） ===== */
+.zone-title {
+    color: #9E2B25;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #9E2B25;
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+}
+.zone-hint {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 28px;
+    letter-spacing: 1px;
+}
+.entry {
+    border: 1px solid #9E2B25;
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin-bottom: 26px;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    animation: fadeInUp 0.5s ease both;
+}
+.entry:hover {
+    background-color: #F8F5F0;
+    box-shadow: 0 2px 12px rgba(158, 43, 37, 0.08);
+}
+.entry:nth-of-type(1) { animation-delay: 0.04s; }
+.entry:nth-of-type(2) { animation-delay: 0.10s; }
+.entry:nth-of-type(3) { animation-delay: 0.16s; }
+.entry:nth-of-type(4) { animation-delay: 0.22s; }
+.entry-tag {
+    display: inline-block;
+    font-size: 13px;
+    color: #9E2B25;
+    border: 1px solid #9E2B25;
+    border-radius: 12px;
+    padding: 2px 12px;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+.entry-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+.entry-head h3 {
+    color: #9E2B25;
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+.toggle {
+    color: #9E2B25;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+.entry.open .toggle {
+    transform: rotate(180deg);
+}
+.entry-preview {
+    margin-top: 12px;
+    font-size: 17px;
+    color: #333;
+    line-height: 1.9;
+}
+.entry-detail {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.32s ease;
+}
+.entry.open .entry-detail {
+    grid-template-rows: 1fr;
+}
+.entry-detail-inner {
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.05s;
+}
+.entry.open .entry-detail-inner {
+    opacity: 1;
+}
+.entry-detail-inner hr.divider-soft {
+    margin: 18px 0 4px;
+    border: none;
+    border-top: 1px dashed #EAE5DC;
+}
+.entry-detail-inner p {
+    margin-top: 14px;
+    font-size: 16px;
+    color: #333;
+    line-height: 2;
+    text-align: justify;
+}
+
+/* 轻柔入场动效（不循环、不刺眼） */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .entry { animation: none; }
+    .entry-detail, .toggle, .entry-detail-inner { transition: none; }
+}

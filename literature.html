@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文学专区 - 文思阁</title>
+    <!-- 网站标签图标 -->
+    <link rel="icon" href="ico/favicon.png" type="image/png">
+    <!-- 引入全局样式表 -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- 网站头部Logo与标语 -->
+<header>
+    <div class="logo">
+        <img src="img/logo.png" alt="文思阁网站logo">
+    </div>
+    <div class="site-title">
+        <h1>文思阁</h1>
+        <p>读诗文，知历史，懂哲思</p>
+    </div>
+</header>
+
+<!-- 全站统一导航栏，可跳转所有板块 -->
+<nav>
+    <ul>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="literature.html">文学</a></li>
+        <li><a href="history.html">历史</a></li>
+        <li><a href="philosophy.html">哲学</a></li>
+        <li><a href="booklist.html">推荐书目</a></li>
+    </ul>
+</nav>
+
+<!-- 文学内容主体区域 -->
+<main>
+    <h2 class="zone-title">文学专区 · 古诗词与古文赏析</h2>
+    <p class="zone-hint">轻点下面的文字卡片，即可展开深度解析 ↓</p>
+
+    <!-- 诗词卡片：表面显示诗句，点击弹出长文解析 -->
+    <article class="entry" onclick="toggleEntry(this, event)">
+        <div class="entry-head">
+            <h3>静夜思｜唐·李白</h3>
+            <span class="toggle">▾</span>
+        </div>
+        <div class="entry-preview">床前明月光，疑是地上霜。<br>举头望明月，低头思故乡。</div>
+        <div class="entry-detail">
+            <div class="entry-detail-inner">
+                <hr class="divider-soft">
+                <p>《静夜思》写于李白青年离乡、客居异乡的某个深夜。一轮明月悬在窗前，清冷的月光洒落床前，诗人在恍惚间竟把它当成了地上的秋霜。这一个"疑"字，写尽了游子在陌生环境里的孤单与迷离。</p>
+                <p>等到他抬起头望向那轮明月，乡愁便再也按捺不住——"举头"与"低头"两个动作，一仰一俯之间，目光从远方明月落回脚下故乡。月亮在中国古典诗词里本就是团圆的象征，而此刻它越明亮，游子的思念就越浓。</p>
+                <p>全诗仅二十字，没有一个生僻字，却把"见月—思乡"这份人类共通的情感写得干净透彻。也正因如此，它成为千百年来华人孩童启蒙必背的第一首唐诗，陪伴一代代人第一次读懂"想家"的滋味。</p>
+            </div>
+        </div>
+    </article>
+
+    <article class="entry" onclick="toggleEntry(this, event)">
+        <div class="entry-head">
+            <h3>春晓｜唐·孟浩然</h3>
+            <span class="toggle">▾</span>
+        </div>
+        <div class="entry-preview">春眠不觉晓，处处闻啼鸟。<br>夜来风雨声，花落知多少。</div>
+        <div class="entry-detail">
+            <div class="entry-detail-inner">
+                <hr class="divider-soft">
+                <p>《春晓》捕捉的是春日清晨醒来那一刻的慵懒与温柔。诗人一夜好睡，不知不觉天已大亮，耳边是处处鸟鸣——"不觉晓"三个字，把春日酣眠的舒适写得极自然，也透着一份闲适的心境。</p>
+                <p>后两句笔锋一转，由听觉想到昨夜：风雨声中，不知园中花儿又被打落了多少。"知多少"不是真要去数，而是一种轻轻的怜惜与怅惘。全诗没有直接写"美"，却让人看见一个生机盎然又易逝的春天。</p>
+                <p>孟浩然是唐代山水田园诗的代表，他擅长用最平白的语言写最真切的感受。这首小诗没有雕琢，却因那份对自然与生命的体贴，成为传诵千年的春日绝唱。</p>
+            </div>
+        </div>
+    </article>
+
+    <article class="entry" onclick="toggleEntry(this, event)">
+        <div class="entry-head">
+            <h3>爱莲说（节选）｜宋·周敦颐</h3>
+            <span class="toggle">▾</span>
+        </div>
+        <div class="entry-preview">予独爱莲之出淤泥而不染，濯清涟而不妖，中通外直，不蔓不枝。</div>
+        <div class="entry-detail">
+            <div class="entry-detail-inner">
+                <hr class="divider-soft">
+                <p>《爱莲说》是北宋理学家周敦颐的一篇短文。古人爱菊、爱牡丹，他却独爱莲花——只因莲花"出淤泥而不染"：它从浑浊的泥沼里生长，却不被污染；在清波中洗涤，却不显妖艳。</p>
+                <p>"中通外直，不蔓不枝"写莲的形，也写人的德：内心通达、外表端正，既不旁生枝节，也不攀附讨好。周敦颐借莲花，表达的是君子应有的品格——身处纷扰而保持清白，立身正直而不骄不媚。</p>
+                <p>这篇文章篇幅极短，却立意高远，是宋代理学"以物喻理"的典范。它教会读者：真正的美不在华丽，而在洁净与节制；真正的修养，是在复杂世界里守住本心。</p>
+            </div>
+        </div>
+    </article>
+</main>
+
+<!-- 页面底部版权文字 -->
+<footer>
+    <p>文思阁｜中小学生文史哲纯净学习平台 · 无广告阅读</p>
+</footer>
+
+<!-- 引入交互脚本（展开/收起、轮播、每日名句） -->
+<script src="js/main.js"></script>
+</body>
+</html>
