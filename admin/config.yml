@@ -1,0 +1,131 @@
+# 文思阁 · Decap CMS 后台配置
+# 后端使用 GitHub：在后台改完内容，会自动存回你的 GitHub 仓库（Athena594/wensige），网站随之更新。
+# 站点同时镜像到 Gitee Pages 做国内加速（改完内容后，去 Gitee 点一下"同步"即可）。
+#
+# ⚠️ 部署前必改 1 处（见下方 backend 段）：
+#   application_id：填你创建的 GitHub OAuth 应用的 Client ID
+#
+# 创建 GitHub OAuth 应用步骤见随附的《后台与部署指南》。
+
+backend:
+  name: github
+  repo: Athena594/wensige        # 你的 GitHub 用户名/仓库名
+  branch: main                   # 你的仓库默认分支（GitHub 新仓库通常是 main）
+  application_id: Ov23liIj7hSZLGmBmrzhb      # 你的 GitHub OAuth 应用 Client ID
+
+# 图片存放目录（后台可上传配图）
+media_folder: "img"
+public_folder: "/img"
+
+collections:
+  # 每日名句
+  - name: "quotes"
+    label: "每日名句"
+    files:
+      - name: "quotes"
+        label: "名句库"
+        file: "content/quotes.json"
+        format: json
+        fields:
+          - name: "items"
+            label: "名句列表"
+            widget: "list"
+            summary: "{{fields.text}}"
+            field:
+              - { name: "text", label: "名句内容", widget: "string" }
+              - { name: "source", label: "出处 / 作者", widget: "string" }
+
+  # 文学专区
+  - name: "literature"
+    label: "文学专区"
+    files:
+      - name: "literature"
+        label: "文学文章"
+        file: "content/literature.json"
+        format: json
+        fields:
+          - name: "items"
+            label: "文章列表"
+            widget: "list"
+            summary: "{{fields.title}}"
+            field:
+              - { name: "title", label: "标题（如：静夜思｜唐·李白）", widget: "string" }
+              - { name: "tag", label: "标签（文学可留空）", widget: "string", required: false }
+              - { name: "preview", label: "表面显示文字（换行用回车）", widget: "text" }
+              - { name: "detail", label: "长文解析（段落间空一行；加粗用 **文字**）", widget: "text" }
+
+  # 历史专区
+  - name: "history"
+    label: "历史专区"
+    files:
+      - name: "history"
+        label: "历史文章"
+        file: "content/history.json"
+        format: json
+        fields:
+          - name: "items"
+            label: "文章列表"
+            widget: "list"
+            summary: "{{fields.title}}"
+            field:
+              - { name: "title", label: "标题", widget: "string" }
+              - { name: "tag", label: "标签（如：历史典故 / 历史名人 / 历史论文）", widget: "string" }
+              - { name: "preview", label: "表面显示文字", widget: "text" }
+              - { name: "detail", label: "长文（段落间空一行；加粗用 **文字**）", widget: "text" }
+
+  # 哲学专区
+  - name: "philosophy"
+    label: "哲学专区"
+    files:
+      - name: "philosophy"
+        label: "哲学文章"
+        file: "content/philosophy.json"
+        format: json
+        fields:
+          - name: "items"
+            label: "文章列表"
+            widget: "list"
+            summary: "{{fields.title}}"
+            field:
+              - { name: "title", label: "标题", widget: "string" }
+              - { name: "tag", label: "标签（如：中国哲学·儒家 / 西方哲学）", widget: "string" }
+              - { name: "preview", label: "表面显示文字", widget: "text" }
+              - { name: "detail", label: "长文（段落间空一行；加粗用 **文字**）", widget: "text" }
+
+  # 推荐书目
+  - name: "books"
+    label: "推荐书目"
+    files:
+      - name: "books"
+        label: "书单"
+        file: "content/books.json"
+        format: json
+        fields:
+          - name: "items"
+            label: "书目列表"
+            widget: "list"
+            summary: "{{fields.title}}"
+            field:
+              - { name: "level", label: "学段", widget: "select", options: ["小学", "初中", "高中"] }
+              - { name: "title", label: "书名（含书名号）", widget: "string" }
+              - { name: "grade", label: "适龄 / 年级", widget: "string" }
+              - { name: "intro", label: "简介", widget: "text" }
+
+  # 首页轮播专题
+  - name: "topics"
+    label: "首页轮播专题"
+    files:
+      - name: "topics"
+        label: "轮播图"
+        file: "content/topics.json"
+        format: json
+        fields:
+          - name: "items"
+            label: "专题列表"
+            widget: "list"
+            summary: "{{fields.title}}"
+            field:
+              - { name: "title", label: "专题标题", widget: "string" }
+              - { name: "summary", label: "简介", widget: "text" }
+              - { name: "image", label: "图片路径（如 img/topic-wenxue.png）", widget: "string" }
+              - { name: "link", label: "跳转链接（如 literature.html）", widget: "string" }
