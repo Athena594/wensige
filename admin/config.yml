@@ -31,7 +31,7 @@ collections:
             label: "名句列表"
             widget: "list"
             summary: "{{fields.text}}"
-            field:
+            fields:
               - { name: "text", label: "名句内容", widget: "string" }
               - { name: "source", label: "出处 / 作者", widget: "string" }
 
@@ -48,7 +48,7 @@ collections:
             label: "文章列表"
             widget: "list"
             summary: "{{fields.title}}"
-            field:
+            fields:
               - { name: "title", label: "标题（如：静夜思｜唐·李白）", widget: "string" }
               - { name: "tag", label: "标签（文学可留空）", widget: "string", required: false }
               - { name: "preview", label: "表面显示文字（换行用回车）", widget: "text" }
@@ -67,7 +67,7 @@ collections:
             label: "文章列表"
             widget: "list"
             summary: "{{fields.title}}"
-            field:
+            fields:
               - { name: "title", label: "标题", widget: "string" }
               - { name: "tag", label: "标签（如：历史典故 / 历史名人 / 历史论文）", widget: "string" }
               - { name: "preview", label: "表面显示文字", widget: "text" }
@@ -86,7 +86,7 @@ collections:
             label: "文章列表"
             widget: "list"
             summary: "{{fields.title}}"
-            field:
+            fields:
               - { name: "title", label: "标题", widget: "string" }
               - { name: "tag", label: "标签（如：中国哲学·儒家 / 西方哲学）", widget: "string" }
               - { name: "preview", label: "表面显示文字", widget: "text" }
@@ -105,7 +105,7 @@ collections:
             label: "书目列表"
             widget: "list"
             summary: "{{fields.title}}"
-            field:
+            fields:
               - { name: "level", label: "学段", widget: "select", options: ["小学", "初中", "高中"] }
               - { name: "title", label: "书名（含书名号）", widget: "string" }
               - { name: "grade", label: "适龄 / 年级", widget: "string" }
@@ -124,7 +124,7 @@ collections:
             label: "专题列表"
             widget: "list"
             summary: "{{fields.title}}"
-            field:
+            fields:
               - { name: "title", label: "专题标题", widget: "string" }
               - { name: "summary", label: "简介", widget: "text" }
               - { name: "image", label: "图片路径（如 img/topic-wenxue.png）", widget: "string" }
